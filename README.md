@@ -2,7 +2,7 @@
 [![](https://img.shields.io/docker/stars/jonkofee/nginx.svg)](https://hub.docker.com/r/jonkofee/nginx 'DockerHub')
 [![](https://img.shields.io/docker/pulls/jonkofee/nginx.svg)](https://hub.docker.com/r/jwilder/jonkofee/nginx 'DockerHub')
 
-Wrapp for [nginx official image](https://hub.docker.com/_/nginx "Alpine")
+Wrapper for [nginx official image](https://hub.docker.com/_/nginx "Alpine")
 
 ## Features
 * Default server responses `444` code
