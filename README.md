@@ -19,32 +19,32 @@ Wrapp for [nginx official image](https://hub.docker.com/_/nginx "Alpine")
 ```yaml
 version: '3'
 services:
-	web:
-	image: jonkofee/nginx
-	working_dir: /code
-	ports:
-		- ${NGINX_SERVER_PORT}:80
-	volumes:
-		- ./:/code
-		- ./docker/nginx/conf:/etc/nginx/conf.d
-	environment:
-		- DOMAIN=test.local
-		- PORT=80 
+  web:
+  image: jonkofee/nginx
+  working_dir: /code
+  ports:
+    - ${NGINX_SERVER_PORT}:80
+  volumes:
+    - ./:/code
+    - ./docker/nginx/conf:/etc/nginx/conf.d
+  environment:
+    - DOMAIN=test.local
+    - PORT=80 
 ```
 ### host.conf
 ```Nginx
 server {
-	server_name api.${DOMAIN};
-	listen ${POST}
+  server_name api.${DOMAIN};
+  listen ${POST}
 
-	location / {
-		root /code;
+  location / {
+    root /code;
 
-		fastcgi_split_path_info ^(.+\.php)(/.+)$;
-		fastcgi_pass php:9000;
-		include fastcgi_params;
-		fastcgi_param SCRIPT_FILENAME $document_root/index.php;
-		fastcgi_param PATH_INFO $fastcgi_path_info;
-	}
+    fastcgi_split_path_info ^(.+\.php)(/.+)$;
+    fastcgi_pass php:9000;
+    include fastcgi_params;
+    fastcgi_param SCRIPT_FILENAME $document_root/index.php;
+    fastcgi_param PATH_INFO $fastcgi_path_info;
+  }
 }
 ```
