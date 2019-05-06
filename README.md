@@ -5,7 +5,7 @@
 Wrapper for [nginx official image](https://hub.docker.com/_/nginx "Alpine")
 
 ## Features
-* Default server responses `444` code
+* Default server responses `404` code
 * Using environment variables in the config file
 * Enabled `GZIP`
 * Default charset `UTF-8`
